@@ -27,7 +27,7 @@ npm install vue3-particles tsparticles
           </div>
         </div>
 
-        <p class="texto">
+        <p class="texto title">
           Main.js file
         </p>
 
@@ -35,14 +35,14 @@ npm install vue3-particles tsparticles
           <div class="texto">
             <pre>
 <span class="string">//use component Particles</span>
-<span class="keyword">import</span> Particles <span class="keyword">from</span> <span class="string">"vue3-particles"</span>;
-<span class="keyword">const</span> app = createApp(App)
-app.use(Particles)
+<span class="keyword">import</span> <span class="value">Particles</span> <span class="keyword">from</span> <span class="string">"vue3-particles"</span>;
+<span class="keyword">const</span> <span class="tag">app</span> = createApp(<span class="tag">App</span>)
+<span class="tag">app</span>.use(<span class="value">Particles</span>)
 </pre>
           </div>
         </div>
 
-        <p class="texto">
+        <p class="texto title">
           App.vue file - Simple example
         </p>
 
@@ -58,7 +58,7 @@ app.use(Particles)
           </div>
         </div>
 
-        <p class="texto">
+        <p class="texto title">
           Codigo
         </p>
         <div class="card">
@@ -66,82 +66,82 @@ app.use(Particles)
 
             <pre id="replace">
 <span class="keyword">&lt;script&gt;</span>
-<span class="tag">import</span> { <span class="keyword">loadFull</span> } <span class="tag">from</span> "<span class="value">tsparticles</span>";
+<span class="tag">import</span> { <span class="keyword">loadFull</span> } <span class="tag">from</span> <span class="value">"tsparticles"</span>;
 <span class="tag">export default</span> {
 <span class="value">data</span><span class="tag">()</span> {
-    return {
-      sourcecode: "const s = new Date().toString()",
-      options: {
-        background: {
-          color: {
-            value: '#b61924'
+  <span class="tag">return</span> {
+      <span class="keyword">sourcecode:</span> <span class="value">"const s = new Date().toString()"</span>,
+      <span class="keyword">options:</span> {
+        <span class="keyword">background:</span> {
+          <span class="keyword">color:</span> {
+            <span class="keyword">value:</span> <span class="value">'#b61924'</span>
           },
         },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onClick: {
-              enable: true,
-              mode: 'push'
+        <span class="keyword">fpsLimit:</span> <span class="value">60</span>,
+        <span class="keyword">interactivity:</span> {
+          <span class="keyword">events:</span> {
+            <span class="keyword">onClick:</span> {
+              <span class="keyword">enable:</span> <span class="value">true</span>,
+              <span class="keyword">mode:</span> <span class="value">'push'</span>
             },
-            onHover: {
-              enable: true,
-              mode: 'repulse'
+            <span class="keyword">onHover:</span> {
+              <span class="keyword">enable:</span> <span class="value">true</span>,
+              <span class="keyword">mode:</span> <span class="value">'repulse'</span>,
             },
-            resize: true
+            <span class="keyword">resize:</span> <span class="value">true</span>
           },
-          modes: {
-            bubble: {
-              distance: 400,
-              duration: 2,
-              opacity: 0.8,
-              size: 40
+          <span class="keyword">modes:</span> {
+            <span class="keyword">bubble:</span> {
+              <span class="keyword">distance:</span> <span class="value">400</span>,
+              <span class="keyword">duration:</span> <span class="value">2</span>,
+              <span class="keyword">opacity:</span> <span class="value">0.8</span>,
+              <span class="keyword">size:</span> <span class="value">40</span>,
             },
-            push: {
-              quantity: 4
+            <span class="keyword">push:</span> {
+              <span class="keyword">quantity:</span> <span class="value">4</span>
             },
-            repulse: {
-              distance: 200,
-              duration: 0.4
+            <span class="keyword">repulse:</span> {
+              <span class="keyword">distance:</span> <span class="value">200</span>,
+              <span class="keyword">duration:</span> <span class="value">0.4</span>
             }
           }
         },
-        particles: {
-          color: {
-            value: '#ffffff'
+        <span class="keyword">particles:</span> {
+          <span class="keyword">color:</span> {
+            <span class="keyword">value:</span> <span class="value">'#ffffff'</span>
           },
-          links: {
-            color: '#ffffff',
-            distance: 150,
-            enable: true,
-            opacity: 0.5,
-            width: 1
+          <span class="keyword">links:</span> {
+            <span class="keyword">color:</span> <span class="value">'#ffffff'</span>,
+            <span class="keyword">distance:</span> <span class="value">150</span>,
+            <span class="keyword">enable:</span> <span class="value">true</span>,
+            <span class="keyword">opacity:</span> <span class="value">0.5</span>,
+            <span class="keyword">width:</span> <span class="value">1</span>
           },
-          collisions: {
-            enable: true
+          <span class="keyword">collisions:</span> {
+            <span class="keyword">enable:</span> <span class="value">true</span>
           },
-          move: {
-            direction: 'none',
-            enable: true,
-            outMode: 'bounce',
-            random: false,
-            speed: 0.6,
-            straight: false
+          <span class="keyword">move:</span> {
+            <span class="keyword">direction:</span> <span class="value">'none'</span>,
+            <span class="keyword">enable:</span> <span class="value">true</span>,
+            <span class="keyword">outMode:</span> <span class="value">'bounce'</span>,
+            <span class="keyword">random:</span> <span class="value">false</span>,
+            <span class="keyword">speed:</span> <span class="value">0.6</span>,
+            <span class="keyword">straight:</span> <span class="value">false</span>,
           },
-          number: {
-            density: {
-              enable: true,
-              area: 800
+          <span class="keyword">number:</span> {
+            <span class="keyword">density:</span> {
+              <span class="keyword">enable:</span> <span class="value">true</span>,
+              <span class="keyword">area:</span> <span class="value">800</span>
             },
-            value: 80
+            <span class="keyword">value:</span> <span class="value">80</span>
           },
-          opacity: {
-            value: 0.5
+          <span class="keyword">opacity:</span> {
+            <span class="keyword">value:</span> <span class="value">0.5</span>
           },
-          shape: {
-            type: 'circle'
+          <span class="keyword">shape:</span> {
+            <span class="keyword">type:</span> <span class="value">'circle'</span>
           },
-          size: {
+          <span class="keyword">size:</span> {
             random: true,
             value: 5
           }
@@ -171,7 +171,7 @@ app.use(Particles)
           </div>
         </div>
 
-        <p class="texto">
+        <p class="texto title">
           Style
         </p>
         <div class="card">
@@ -292,7 +292,7 @@ export default {
     };
 
     this.particlesLoaded = async container => {
-      console.log("Particles container loaded", container);
+      //console.log("Particles container loaded", container);
     };
   },
   mounted(){
@@ -342,13 +342,12 @@ export default {
   background-color: #292929;
   margin: 2rem 0;
   padding: 2rem;
-  width: 50vw;
+  width: 60vw;
   box-shadow: 2px 6px 17px rgb(0 0 0 / 39%);
   border-radius: 0.5rem;
 }
 
 .texto {
-  font-size: 1.3rem;
   color: white;
 }
 </style>
