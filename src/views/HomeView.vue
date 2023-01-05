@@ -24,7 +24,13 @@
             <pre id="install">
 npm install vue3-particles tsparticles
 </pre>
-            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('install')" />
+            <div class="flex">
+              <div v-show="install" class="q-mr-md">
+                copy¡¡
+              </div>
+              <q-icon name="content_copy" class="icono" size="1.5rem" color="white"
+                @click="copyCode('install'), install = true" />
+            </div>
           </div>
         </div>
 
@@ -40,7 +46,13 @@ npm install vue3-particles tsparticles
 <span class="keyword">const</span> <span class="tag">app</span> = createApp(<span class="tag">App</span>)
 <span class="tag">app</span>.use(<span class="value">Particles</span>)
 </pre>
-            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('config')" />
+            <div class="flex">
+              <div v-show="config" class="q-mr-md">
+                copy¡¡
+              </div>
+              <q-icon name="content_copy" class="icono" size="1.5rem" color="white"
+                @click="copyCode('config'), config = true" />
+            </div>
           </div>
         </div>
 
@@ -57,7 +69,13 @@ npm install vue3-particles tsparticles
         <span class="string">:particlesLoaded</span>="<span class="value">:particlesLoaded</span>"
         <span class="string">:options</span>="<span class="value">:options</span>" /&gt;
 </pre>
-            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('html')" />
+            <div class="flex">
+              <div v-show="html" class="q-mr-md">
+                copy¡¡
+              </div>
+              <q-icon name="content_copy" class="icono" size="1.5rem" color="white"
+                @click="copyCode('html'), html = true" />
+            </div>
           </div>
         </div>
 
@@ -169,7 +187,13 @@ npm install vue3-particles tsparticles
 }
 <span class="nameTag">&lt;/script&gt;</span>
 </pre>
-            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('js')" />
+            <div class="flex">
+              <div v-show="js" class="q-mr-md">
+                copy¡¡
+              </div>
+              <q-icon name="content_copy" class="icono" size="1.5rem" color="white"
+                @click="copyCode('js'), js = true" />
+            </div>
           </div>
         </div>
 
@@ -191,9 +215,17 @@ npm install vue3-particles tsparticles
 }
 <span class="nameTag">&lt;/style&gt;</span> 
 </pre>
-            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('css')" />
+            <div class="flex">
+              <div v-show="css" class="q-mr-md">
+                copy¡¡
+              </div>
+              <q-icon name="content_copy" class="icono" size="1.5rem" color="white"
+                @click="copyCode('css'), css = true" />
+            </div>
           </div>
         </div>
+
+
 
       </div>
     </div>
@@ -206,6 +238,11 @@ import { loadFull } from "tsparticles";
 export default {
   data() {
     return {
+      install: false,
+      config: false,
+      html: false,
+      js: false,
+      css: false,
       options: {
         background: {
           color: {
