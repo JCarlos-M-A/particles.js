@@ -6,7 +6,7 @@
       <div>
         <h1>
           <img style="filter: invert(100%);" src="https://particles.js.org/images/GitHub-Mark-120px-plus.png" alt="">
-          VUE-PARTICLES
+          VUE3-PARTICLES
         </h1>
         <h4>
           Vue.js component for particles backgrounds
@@ -62,7 +62,7 @@ npm install vue3-particles tsparticles
         </div>
 
         <p class="texto title">
-          Codigo
+          Code
         </p>
         <div class="card">
           <div class="texto flex justify-between">
