@@ -20,8 +20,10 @@
         </h3>
 
         <div class="card">
-          <div class="texto text-center">
-            npm install vue3-particles tsparticles
+          <div class="texto">
+            <pre>
+npm install vue3-particles tsparticles
+</pre>
           </div>
         </div>
 
@@ -31,28 +33,162 @@
 
         <div class="card">
           <div class="texto">
-            <div>
-              //use component Particles
-            </div>
-            <div>
-              import Particles from "vue3-particles";
-            </div>
-
-            <div>
-              const app = createApp(App)
-            </div>
-            app.use(Particles)
+            <pre>
+//use component Particles
+import Particles from "vue3-particles";
+const app = createApp(App)
+app.use(Particles)
+</pre>
           </div>
+        </div>
 
-          <pre>
-            <span class="token keyword">import </span><span class="token text">Particles&lt;</span>
-            <span class="pl-ent">script</span> 
-            <span class="pl-c1">lang</span>
-            ="
-            <span class="pl-s">ts</span>
-            " 
-            <span class="pl-c1">setup</span>
-          </pre>
+        <p class="texto">
+          App.vue file - Simple example
+        </p>
+
+        <div class="card">
+          <div class="texto">
+            <pre>
+//use
+&lt;Particles id="tsparticles" class="particles" 
+        :particlesInit="particlesInit" 
+        :particlesLoaded="particlesLoaded"
+        :options="options" /&gt;
+</pre>
+          </div>
+        </div>
+
+        <p class="texto">
+          Codigo
+        </p>
+        <div class="card">
+          <div class="texto">
+
+            <pre>
+&lt;script&gt;
+import { loadFull } from "tsparticles";
+export default {
+  data() {
+    return {
+      sourcecode: "const s = new Date().toString()",
+      options: {
+        background: {
+          color: {
+            value: '#b61924'
+          },
+        },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onClick: {
+              enable: true,
+              mode: 'push'
+            },
+            onHover: {
+              enable: true,
+              mode: 'repulse'
+            },
+            resize: true
+          },
+          modes: {
+            bubble: {
+              distance: 400,
+              duration: 2,
+              opacity: 0.8,
+              size: 40
+            },
+            push: {
+              quantity: 4
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4
+            }
+          }
+        },
+        particles: {
+          color: {
+            value: '#ffffff'
+          },
+          links: {
+            color: '#ffffff',
+            distance: 150,
+            enable: true,
+            opacity: 0.5,
+            width: 1
+          },
+          collisions: {
+            enable: true
+          },
+          move: {
+            direction: 'none',
+            enable: true,
+            outMode: 'bounce',
+            random: false,
+            speed: 0.6,
+            straight: false
+          },
+          number: {
+            density: {
+              enable: true,
+              area: 800
+            },
+            value: 80
+          },
+          opacity: {
+            value: 0.5
+          },
+          shape: {
+            type: 'circle'
+          },
+          size: {
+            random: true,
+            value: 5
+          }
+        },
+        fullScreen: {
+          enable: false,
+        },
+        detectRetina: true
+      },
+      particlesInit: "",
+      particlesLoaded: "",
+    }
+  },
+  beforeMount() {
+    this.particlesInit = async engine => {
+      await loadFull(engine);
+    };
+
+    this.particlesLoaded = async container => {
+      console.log("Particles container loaded", container);
+    };
+
+  }
+}
+&lt;/script&gt;
+</pre>
+          </div>
+        </div>
+
+        <p class="texto">
+          Style
+        </p>
+        <div class="card">
+          <div class="texto">
+<pre>
+&lt;style scoped&gt;  
+.particles {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+&lt;/style&gt; 
+</pre>
+          </div>
         </div>
 
       </div>
@@ -164,14 +300,6 @@ export default {
 </script>
 
 <style scoped>
-
-.token.keyword {
-    color: #66d9ef;
-}
-.token.text {
-    color: #fff;
-}
-
 .particles {
   width: 100vw;
   height: 100vh;
@@ -196,7 +324,7 @@ export default {
   background-color: #292929;
   margin: 2rem 0;
   padding: 2rem;
-  width: 30vw;
+  width: 50vw;
   box-shadow: 2px 6px 17px rgb(0 0 0 / 39%);
   border-radius: 0.5rem;
 }
