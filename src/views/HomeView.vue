@@ -1,11 +1,11 @@
 <template>
   <q-page>
-    <div class="flex flex-center" style="height: 100vh;">
+    <div class="flex flex-center text-white" style="height: 100vh;">
       <Particles id="tsparticles" class="particles" :particlesInit="particlesInit" :particlesLoaded="particlesLoaded"
         :options="options" />
       <div>
         <h1>
-          <img src="https://particles.js.org/images/GitHub-Mark-120px-plus.png" alt="">
+          <img style="filter: invert(100%);" src="https://particles.js.org/images/GitHub-Mark-120px-plus.png" alt="">
           VUE-PARTICLES
         </h1>
         <h4>
@@ -34,9 +34,9 @@ npm install vue3-particles tsparticles
         <div class="card">
           <div class="texto">
             <pre>
-//use component Particles
-import Particles from "vue3-particles";
-const app = createApp(App)
+<span class="string">//use component Particles</span>
+<span class="keyword">import</span> Particles <span class="keyword">from</span> <span class="string">"vue3-particles"</span>;
+<span class="keyword">const</span> app = createApp(App)
 app.use(Particles)
 </pre>
           </div>
@@ -49,11 +49,11 @@ app.use(Particles)
         <div class="card">
           <div class="texto">
             <pre>
-//use
-&lt;Particles id="tsparticles" class="particles" 
-        :particlesInit="particlesInit" 
-        :particlesLoaded="particlesLoaded"
-        :options="options" /&gt;
+<span class="string">//use</span>             
+&lt;<span class="tag">Particles</span> <span class="string">id</span>="<span class="value">tsparticles</span>" <span class="string">class</span>="<span class="value">particles</span>" 
+        <span class="string">:particlesInit</span>="<span class="value">:particlesInit</span>" 
+        <span class="string">:particlesLoaded</span>="<span class="value">:particlesLoaded</span>"
+        <span class="string">:options</span>="<span class="value">:options</span>" /&gt;
 </pre>
           </div>
         </div>
@@ -64,11 +64,11 @@ app.use(Particles)
         <div class="card">
           <div class="texto">
 
-            <pre>
-&lt;script&gt;
-import { loadFull } from "tsparticles";
-export default {
-  data() {
+            <pre id="replace">
+<span class="keyword">&lt;script&gt;</span>
+<span class="tag">import</span> { <span class="keyword">loadFull</span> } <span class="tag">from</span> "<span class="value">tsparticles</span>";
+<span class="tag">export default</span> {
+<span class="value">data</span><span class="tag">()</span> {
     return {
       sourcecode: "const s = new Date().toString()",
       options: {
@@ -176,7 +176,7 @@ export default {
         </p>
         <div class="card">
           <div class="texto">
-<pre>
+            <pre>
 &lt;style scoped&gt;  
 .particles {
   width: 100vw;
@@ -205,7 +205,7 @@ export default {
       options: {
         background: {
           color: {
-            value: '#b61924'
+            value: '#292929'
           },
         },
         fpsLimit: 60,
@@ -294,12 +294,30 @@ export default {
     this.particlesLoaded = async container => {
       console.log("Particles container loaded", container);
     };
-
+  },
+  mounted(){
+    //
   }
 }
 </script>
 
 <style scoped>
+.keyword {
+  color: #66d9ef;
+}
+
+.string{
+  color: #a6e22e
+}
+
+.tag{
+  color: #f92672;
+}
+
+.value{
+  color: #e6db74;
+}
+
 .particles {
   width: 100vw;
   height: 100vh;
@@ -314,7 +332,7 @@ export default {
 }
 
 .title {
-  font-weight: 100;
+  font-weight: 200;
   font-size: 2rem;
   color: white;
   font-family: Teko, sans-serif;
@@ -330,6 +348,7 @@ export default {
 }
 
 .texto {
+  font-size: 1.3rem;
   color: white;
 }
 </style>
