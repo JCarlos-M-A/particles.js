@@ -73,7 +73,6 @@ npm install vue3-particles tsparticles
 <span class="tag">export default</span> {
 <span class="value">data</span>() {
   <span class="tag">return</span> {
-      <span class="keyword">sourcecode:</span> <span class="value">"const s = new Date().toString()"</span>,
       <span class="keyword">options:</span> {
         <span class="keyword">background:</span> {
           <span class="keyword">color:</span> {
@@ -207,7 +206,6 @@ import { loadFull } from "tsparticles";
 export default {
   data() {
     return {
-      sourcecode: "const s = new Date().toString()",
       options: {
         background: {
           color: {
