@@ -20,10 +20,11 @@
         </h3>
 
         <div class="card">
-          <div class="texto">
-            <pre>
+          <div class="texto flex justify-between">
+            <pre id="install">
 npm install vue3-particles tsparticles
 </pre>
+            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('install')" />
           </div>
         </div>
 
@@ -32,13 +33,14 @@ npm install vue3-particles tsparticles
         </p>
 
         <div class="card">
-          <div class="texto">
-            <pre>
+          <div class="texto flex justify-between">
+            <pre id="config">
 <span class="string">//use component Particles</span>
 <span class="keyword">import</span> <span class="value">Particles</span> <span class="keyword">from</span> <span class="string">"vue3-particles"</span>;
 <span class="keyword">const</span> <span class="tag">app</span> = createApp(<span class="tag">App</span>)
 <span class="tag">app</span>.use(<span class="value">Particles</span>)
 </pre>
+            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('config')" />
           </div>
         </div>
 
@@ -47,14 +49,15 @@ npm install vue3-particles tsparticles
         </p>
 
         <div class="card">
-          <div class="texto">
-            <pre>
+          <div class="texto flex justify-between">
+            <pre id="html">
 <span class="string">//use</span>             
 &lt;<span class="tag">Particles</span> <span class="string">id</span>="<span class="value">tsparticles</span>" <span class="string">class</span>="<span class="value">particles</span>" 
         <span class="string">:particlesInit</span>="<span class="value">:particlesInit</span>" 
         <span class="string">:particlesLoaded</span>="<span class="value">:particlesLoaded</span>"
         <span class="string">:options</span>="<span class="value">:options</span>" /&gt;
 </pre>
+            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('html')" />
           </div>
         </div>
 
@@ -62,13 +65,13 @@ npm install vue3-particles tsparticles
           Codigo
         </p>
         <div class="card">
-          <div class="texto">
+          <div class="texto flex justify-between">
 
-            <pre id="replace">
-<span class="keyword">&lt;script&gt;</span>
+            <pre id="js">
+<span class="nameTag">&lt;script&gt;</span>
 <span class="tag">import</span> { <span class="keyword">loadFull</span> } <span class="tag">from</span> <span class="value">"tsparticles"</span>;
 <span class="tag">export default</span> {
-<span class="value">data</span><span class="tag">()</span> {
+<span class="value">data</span>() {
   <span class="tag">return</span> {
       <span class="keyword">sourcecode:</span> <span class="value">"const s = new Date().toString()"</span>,
       <span class="keyword">options:</span> {
@@ -142,32 +145,32 @@ npm install vue3-particles tsparticles
             <span class="keyword">type:</span> <span class="value">'circle'</span>
           },
           <span class="keyword">size:</span> {
-            random: true,
-            value: 5
+            <span class="keyword">random:</span> <span class="value">true</span>,
+            <span class="keyword">value:</span> <span class="value">5</span>
           }
         },
-        fullScreen: {
-          enable: false,
+        <span class="keyword">fullScreen:</span> {
+          <span class="keyword">enable:</span> <span class="value">false</span>
         },
-        detectRetina: true
+        <span class="keyword">detectRetina:</span> <span class="value">true</span>
       },
-      particlesInit: "",
-      particlesLoaded: "",
+      <span class="keyword">particlesInit:</span> <span class="value">""</span>,
+      <span class="keyword">particlesLoaded:</span> <span class="value">""</span>
     }
   },
-  beforeMount() {
-    this.particlesInit = async engine => {
-      await loadFull(engine);
+  <span class="tag">beforeMount</span>() {
+    <span class="keyword">this</span>.particlesInit = <span class="keyword">async</span> engine => {
+      <span class="tag">await</span> loadFull(engine);
     };
 
-    this.particlesLoaded = async container => {
-      console.log("Particles container loaded", container);
+    <span class="keyword">this</span>.particlesLoaded = <span class="keyword">async</span> container => {
+      <span class="tag">console</span>.log("Particles container loaded", container);
     };
-
   }
 }
-&lt;/script&gt;
+<span class="nameTag">&lt;/script&gt;</span>
 </pre>
+            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('js')" />
           </div>
         </div>
 
@@ -175,19 +178,21 @@ npm install vue3-particles tsparticles
           Style
         </p>
         <div class="card">
-          <div class="texto">
-            <pre>
-&lt;style scoped&gt;  
-.particles {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -10;
+          <div class="texto flex justify-between">
+            <pre id="css">
+<span class="nameTag">&lt;style <span class="keyword">scoped</span>&gt;</span>
+<span class="value">.particles</span>
+ {
+  <span class="keyword">width:</span> <span class="value">100vw</span>;
+  <span class="keyword">height:</span> <span class="value">100vh</span>;
+  <span class="keyword">position:</span> <span class="value">fixed</span>;
+  <span class="keyword">top:</span> <span class="value">0</span>;
+  <span class="keyword">left:</span> <span class="value">0</span>;
+  <span class="keyword">z-index:</span> <span class="value">-10</span>;
 }
-&lt;/style&gt; 
+<span class="nameTag">&lt;/style&gt;</span> 
 </pre>
+            <q-icon name="content_copy" class="icono" size="1.5rem" color="white" @click="copyCode('css')" />
           </div>
         </div>
 
@@ -198,6 +203,7 @@ npm install vue3-particles tsparticles
 
 <script>
 import { loadFull } from "tsparticles";
+
 export default {
   data() {
     return {
@@ -295,26 +301,42 @@ export default {
       //console.log("Particles container loaded", container);
     };
   },
-  mounted(){
+  methods: {
+    copyCode(val) {
+      // Get the text field
+      var copyText = document.getElementById(val);
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(copyText.innerText);
+    }
+  },
+  computed: {
     //
   }
 }
 </script>
 
 <style scoped>
+.icono:hover {
+  cursor: pointer;
+}
+
+.nameTag {
+  color: #0270ff;
+}
+
 .keyword {
   color: #66d9ef;
 }
 
-.string{
+.string {
   color: #a6e22e
 }
 
-.tag{
+.tag {
   color: #f92672;
 }
 
-.value{
+.value {
   color: #e6db74;
 }
 
