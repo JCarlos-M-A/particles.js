@@ -253,8 +253,8 @@ export default {
         interactivity: {
           events: {
             onClick: {
-              enable: true,
-              mode: 'push'
+              //enable: true,
+              //mode: 'push'
             },
             onHover: {
               enable: true,
